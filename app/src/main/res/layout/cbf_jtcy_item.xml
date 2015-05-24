@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView android:id="@+id/txt_jtcy_cyxm"
+        android:text="万荣辉"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content" />
+
+    <TextView android:id="@+id/txt_jtcy_cyxb"
+        android:text="男"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+
+    <TextView android:id="@+id/txt_jtcy_cyzjhm"
+        android:text="360622200301223910"
+        android:layout_width="0dp"
+        android:layout_weight="4"
+        android:layout_height="wrap_content" />
+
+    <TextView android:id="@+id/txt_jtcy_yhzgx"
+        android:text="子"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+
+    <TextView android:id="@+id/txt_jtcy_sfgyr"
+        android:text="是"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+</LinearLayout>

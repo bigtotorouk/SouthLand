@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity">
+
+    <ListView android:id="@+id/lVi_projects"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <ImageButton android:id="@+id/btn_new_project"
+        android:src="@drawable/ic_action_new"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onNewProjectButtonClicked"
+        style="@android:style/Widget.Holo.Button.Borderless"
+        android:background="@drawable/button_custom" />
+
+</LinearLayout>

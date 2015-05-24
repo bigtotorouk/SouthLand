@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.shewei.southland.CreateProjectActivity">
+
+    <TextView android:text="工程名称"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText android:id="@+id/edt_project_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/abc_text_size_medium_material" />
+
+    <TextView android:text="权属数据库"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button android:id="@+id/btn_browser_owners_db"
+        android:drawableLeft="@drawable/ic_action_sort_by_size"
+        android:textSize="@dimen/abc_text_size_small_material"
+        android:onClick="onBrowserOwnersDBButtonClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical" />
+
+    <TextView android:text="宗地矢量图"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button android:id="@+id/btn_browser_parcel_map"
+        android:drawableLeft="@drawable/ic_action_sort_by_size"
+        android:textSize="@dimen/abc_text_size_small_material"
+        android:onClick="onBrowserParcelMapButtonClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical" />
+
+    <Button android:id="@+id/btn_create_project"
+        android:layout_marginTop="48dp"
+        android:text="创建"
+        android:textColor="#FFF"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:background="@drawable/yellow_button"
+        android:onClick="onCreateProjectButtonClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

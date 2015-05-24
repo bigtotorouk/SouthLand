@@ -1,0 +1,78 @@
+<!--<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical"-->
+    <!--android:background="#CCCC"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--tools:context="com.shewei.southland.NavigationDrawerFragment">-->
+
+    <!--<Button android:id="@+id/btn_drawer_FBF"-->
+        <!--android:gravity="left|center_vertical"-->
+        <!--android:text="发包方"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="@dimen/abc_text_size_large_material"-->
+        <!--android:drawableLeft="@drawable/ic_action_group"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--style="@android:style/Widget.Holo.Button.Borderless"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:paddingBottom="8dp" />-->
+
+    <!--<Button android:id="@+id/btn_drawer_CBF"-->
+        <!--android:gravity="left|center_vertical"-->
+        <!--android:text="承包方"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="@dimen/abc_text_size_large_material"-->
+        <!--android:drawableLeft="@drawable/ic_action_person"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--style="@android:style/Widget.Holo.Button.Borderless"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:paddingBottom="8dp" />-->
+
+    <!--<Button android:id="@+id/btn_drawer_CBDK"-->
+        <!--android:gravity="left|center_vertical"-->
+        <!--android:text="承包地块"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="@dimen/abc_text_size_large_material"-->
+        <!--android:drawableLeft="@drawable/ic_action_select_all"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--style="@android:style/Widget.Holo.Button.Borderless"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:paddingBottom="8dp" />-->
+
+<!--</LinearLayout>-->
+
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.shewei.southland.NavigationDrawerFragment">
+
+    <ListView android:id="@+id/lVi_sections"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/holo_blue_light"
+        android:dividerHeight="0dp" />
+
+    <Button android:id="@+id/btn_close_project"
+        android:gravity="left|center_vertical"
+        android:text="关闭"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textColor="@android:color/darker_gray"
+        android:drawableLeft="@drawable/ic_action_undo"
+        android:background="@drawable/drawer_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.Holo.Button.Borderless" />
+
+</LinearLayout>

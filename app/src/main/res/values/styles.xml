@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/Shewei.ActionBar</item>
+        <item name="actionBarStyle">@style/Shewei.ActionBar</item>
+    </style>
+
+    <style name="Shewei.ActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">#0099CC</item>
+        <item name="background">@drawable/actionbar_background</item>
+    </style>
+
+    <drawable name="actionbar_background">#0099CC</drawable>
+</resources>
