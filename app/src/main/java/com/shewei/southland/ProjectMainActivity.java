@@ -7,6 +7,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+
+import com.shewei.southland.fragment.InvestManageSurveyFragment;
+import com.shewei.southland.fragment.NavigationDrawerFragment;
+import com.shewei.southland.fragment.WorkGuaranteeImpFragment;
+
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -74,6 +79,8 @@ public class ProjectMainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+
     }
 
     @Override
@@ -111,16 +118,16 @@ public class ProjectMainActivity extends ActionBarActivity
     private Fragment createFragment(int position) {
         switch (position) {
             case STATISTIC_FRAGMENT:
-                mFragments[position] = StatisticFragment.newInstance(owners_db, parcel_map);
+                mFragments[position] = WorkGuaranteeImpFragment.newInstance(owners_db, parcel_map);
                 break;
             case FBF_LIST_FRAGMENT:
-                mFragments[position] = FBFListFragment.newInstance(owners_db, parcel_map);
+                mFragments[position] = InvestManageSurveyFragment.newInstance(owners_db, parcel_map);
                 break;
             case CBF_LIST_FRAGMENT:
-                mFragments[position] = CBFListFragment.newInstance(owners_db, parcel_map);
+                mFragments[position] = InvestManageSurveyFragment.newInstance(owners_db, parcel_map);
                 break;
             case CBDK_LIST_FRAGMENT:
-                mFragments[position] = CBDKListFragment.newInstance(owners_db, parcel_map);
+                mFragments[position] = InvestManageSurveyFragment.newInstance(owners_db, parcel_map);
                 break;
         }
         return mFragments[position];
@@ -132,6 +139,7 @@ public class ProjectMainActivity extends ActionBarActivity
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setTitle(project_name);
+
     }
 
     @Override
@@ -188,7 +196,11 @@ public class ProjectMainActivity extends ActionBarActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_add) {
+            Intent intent = new Intent(this, FBFListActivity.class);
+            intent.putExtra("owners_db",owners_db);
+            intent.putExtra("parcel_map",parcel_map);
+            startActivity(intent);
             return true;
         }
 

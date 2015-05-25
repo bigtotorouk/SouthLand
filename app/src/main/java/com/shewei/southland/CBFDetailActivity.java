@@ -104,8 +104,6 @@ public class CBFDetailActivity extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-        } else if (id == R.id.action_view_fbf_parcels) {
-
         }
 
         return super.onOptionsItemSelected(item);

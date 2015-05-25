@@ -8,7 +8,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.shewei.southland.FBFDetailActivity">
-
+    <ImageView android:id="@+id/fbf_map"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/ic_dialog_map"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/grey"/>
     <TableLayout android:stretchColumns="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -17,7 +24,7 @@
             android:layout_marginBottom="4dp">
             <TextView android:text="发包方编码"
                 android:textColor="@android:color/black" />
-            <EditText android:id="@+id/edt_fbf_bm"
+            <TextView android:id="@+id/edt_fbf_bm"
                 android:textSize="@dimen/abc_text_size_small_material" />
         </TableRow>
 
@@ -25,15 +32,16 @@
             android:layout_marginBottom="4dp">
             <TextView android:text="发包方名称"
                 android:textColor="@android:color/black" />
-            <EditText android:id="@+id/edt_fbf_mc"
-                android:textSize="@dimen/abc_text_size_small_material" />
+            <TextView android:id="@+id/edt_fbf_mc"
+                android:textSize="@dimen/abc_text_size_small_material"
+                android:ellipsize="end"/>
         </TableRow>
 
         <TableRow android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp">
             <TextView android:text="负责人姓名"
                 android:textColor="@android:color/black" />
-            <EditText android:id="@+id/edt_fbf_fzrxm"
+            <TextView android:id="@+id/edt_fbf_fzrxm"
                 android:textSize="@dimen/abc_text_size_small_material" />
         </TableRow>
 
@@ -41,20 +49,21 @@
             android:layout_marginBottom="4dp">
             <TextView android:text="联系电话"
                 android:textColor="@android:color/black" />
-            <EditText android:id="@+id/edt_fbf_lxdh"
+            <TextView android:id="@+id/edt_fbf_lxdh"
                 android:textSize="@dimen/abc_text_size_small_material" />
         </TableRow>
 
         <TextView android:text="发包方负责人地址"
             android:textColor="@android:color/black" />
-        <EditText android:id="@+id/edt_fbf_fzrdz"
-            android:textSize="@dimen/abc_text_size_small_material" />
+        <TextView android:id="@+id/edt_fbf_fzrdz"
+            android:textSize="@dimen/abc_text_size_small_material"
+            android:gravity="right"/>
 
         <TableRow android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp">
             <TextView android:text="负责人证件类型"
                 android:textColor="@android:color/black" />
-            <EditText android:id="@+id/edt_fbf_fzrzjlx"
+            <TextView android:id="@+id/edt_fbf_fzrzjlx"
                 android:textSize="@dimen/abc_text_size_small_material" />
         </TableRow>
 
@@ -62,7 +71,7 @@
             android:layout_marginBottom="4dp">
             <TextView android:text="证件号码"
                 android:textColor="@android:color/black" />
-            <EditText android:id="@+id/edt_fbf_fzrzjhm"
+            <TextView android:id="@+id/edt_fbf_fzrzjhm"
                 android:textSize="@dimen/abc_text_size_small_material" />
         </TableRow>
 
@@ -74,7 +83,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
         android:textColor="@android:color/black" />
-    <EditText android:id="@+id/edt_fbf_dcjs"
+    <TextView android:id="@+id/edt_fbf_dcjs"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

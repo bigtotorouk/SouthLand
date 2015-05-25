@@ -1,16 +1,16 @@
-package com.shewei.southland;
+package com.shewei.southland.fragment;
 
-import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,6 +22,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import com.shewei.southland.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -84,22 +86,22 @@ public class NavigationDrawerFragment extends Fragment {
         }
 
         Map<String, Object> sectionStatistic = new HashMap<>();
-        sectionStatistic.put("title", "统计");
+        sectionStatistic.put("title", "工作保障落实情况");
         sectionStatistic.put("image", R.drawable.ic_action_copy);
         mSectionList.add(sectionStatistic);
 
         Map<String, Object> sectionFBF = new HashMap<>();
-        sectionFBF.put("title", "发包方");
+        sectionFBF.put("title", "承包经营权调查成果");
         sectionFBF.put("image", R.drawable.ic_action_group);
         mSectionList.add(sectionFBF);
 
         Map<String, Object> sectionCBF = new HashMap<>();
-        sectionCBF.put("title", "承包方");
+        sectionCBF.put("title", "承包经营权登记成果");
         sectionCBF.put("image", R.drawable.ic_action_person);
         mSectionList.add(sectionCBF);
 
         Map<String, Object> sectionCBDK = new HashMap<>();
-        sectionCBDK.put("title", "承包地块");
+        sectionCBDK.put("title", "信息化建设完成");
         sectionCBDK.put("image", R.drawable.ic_action_select_all);
         mSectionList.add(sectionCBDK);
 
@@ -285,7 +287,6 @@ public class NavigationDrawerFragment extends Fragment {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-
 
         return super.onOptionsItemSelected(item);
     }

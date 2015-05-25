@@ -50,6 +50,14 @@
             android:name=".ParcelViewActivity"
             android:label="@string/title_activity_parcel_view" >
         </activity>
+        <activity
+            android:name=".FBFListActivity"
+            android:label="@string/title_activity_fbflist" >
+        </activity>
+        <activity
+            android:name=".FBFEditActivity"
+            android:label="@string/title_activity_fbfedit" >
+        </activity>
     </application>
 
 </manifest>

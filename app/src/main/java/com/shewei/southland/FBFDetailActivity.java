@@ -8,38 +8,40 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
+import android.view.View;
+import android.widget.TextView;
 
 
-public class FBFDetailActivity extends ActionBarActivity {
+public class FBFDetailActivity extends ActionBarActivity implements View.OnClickListener {
 
     private String mOwnersDB;
     private String mParcelMap;
     private String FBFBM;
 
     private SQLiteDatabase dbOwners;
-    private EditText edt_fbf_bm;
-    private EditText edt_fbf_mc;
-    private EditText edt_fbf_fzrxm;
-    private EditText edt_fbf_lxdh;
-    private EditText edt_fbf_fzrdz;
-    private EditText edt_fbf_fzrzjlx;
-    private EditText edt_fbf_fzrzjhm;
-    private EditText edt_fbf_dcjs;
+    private TextView edt_fbf_bm;
+    private TextView edt_fbf_mc;
+    private TextView edt_fbf_fzrxm;
+    private TextView edt_fbf_lxdh;
+    private TextView edt_fbf_fzrdz;
+    private TextView edt_fbf_fzrzjlx;
+    private TextView edt_fbf_fzrzjhm;
+    private TextView edt_fbf_dcjs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fbfdetail);
 
-        edt_fbf_bm = (EditText) findViewById(R.id.edt_fbf_bm);
-        edt_fbf_mc = (EditText) findViewById(R.id.edt_fbf_mc);
-        edt_fbf_fzrxm = (EditText) findViewById(R.id.edt_fbf_fzrxm);
-        edt_fbf_lxdh = (EditText) findViewById(R.id.edt_fbf_lxdh);
-        edt_fbf_fzrdz = (EditText) findViewById(R.id.edt_fbf_fzrdz);
-        edt_fbf_fzrzjlx = (EditText) findViewById(R.id.edt_fbf_fzrzjlx);
-        edt_fbf_fzrzjhm = (EditText) findViewById(R.id.edt_fbf_fzrzjhm);
-        edt_fbf_dcjs = (EditText) findViewById(R.id.edt_fbf_dcjs);
+        edt_fbf_bm = (TextView) findViewById(R.id.edt_fbf_bm);
+        edt_fbf_mc = (TextView) findViewById(R.id.edt_fbf_mc);
+        edt_fbf_fzrxm = (TextView) findViewById(R.id.edt_fbf_fzrxm);
+        edt_fbf_lxdh = (TextView) findViewById(R.id.edt_fbf_lxdh);
+        edt_fbf_fzrdz = (TextView) findViewById(R.id.edt_fbf_fzrdz);
+        edt_fbf_fzrzjlx = (TextView) findViewById(R.id.edt_fbf_fzrzjlx);
+        edt_fbf_fzrzjhm = (TextView) findViewById(R.id.edt_fbf_fzrzjhm);
+        edt_fbf_dcjs = (TextView) findViewById(R.id.edt_fbf_dcjs);
+        findViewById(R.id.fbf_map).setOnClickListener(this);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
@@ -54,6 +56,30 @@ public class FBFDetailActivity extends ActionBarActivity {
         }
 
         dbOwners = SQLiteDatabase.openDatabase(mOwnersDB, null, SQLiteDatabase.OPEN_READWRITE);
+        Cursor c = dbOwners.rawQuery("SELECT [FBFBM] as [_id], * FROM [FBF] WHERE [FBFBM] = ?", new String[] { FBFBM });
+        if (c.moveToFirst()) {
+            edt_fbf_bm.setText(c.getString(c.getColumnIndex("FBFBM")));
+            edt_fbf_mc.setText(c.getString(c.getColumnIndex("FBFMC")));
+            edt_fbf_fzrxm.setText(c.getString(c.getColumnIndex("FBFFZRXM")));
+            edt_fbf_lxdh.setText(c.getString(c.getColumnIndex("LXDH")));
+            edt_fbf_fzrdz.setText(c.getString(c.getColumnIndex("FBFDZ")));
+            String zjlx = c.getString(c.getColumnIndex("FZRZJLX"));
+            if (zjlx.equals("1")) {
+                edt_fbf_fzrzjlx.setText("身份证");
+            }
+            edt_fbf_fzrzjhm.setText(c.getString(c.getColumnIndex("FZRZJHM")));
+            edt_fbf_dcjs.setText(c.getString(c.getColumnIndex("FBFDCJS")));
+        }
+
+        setTitle(edt_fbf_mc.getText());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(dbOwners == null){
+            dbOwners = SQLiteDatabase.openDatabase(mOwnersDB, null, SQLiteDatabase.OPEN_READWRITE);
+        }
         Cursor c = dbOwners.rawQuery("SELECT [FBFBM] as [_id], * FROM [FBF] WHERE [FBFBM] = ?", new String[] { FBFBM });
         if (c.moveToFirst()) {
             edt_fbf_bm.setText(c.getString(c.getColumnIndex("FBFBM")));
@@ -93,9 +119,22 @@ public class FBFDetailActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_edit) {
+            if(FBFBM!=null){
+                Intent intent = new Intent(this, FBFEditActivity.class);
+                intent.putExtra("FBFBM", FBFBM);
+                intent.putExtra("owners_db", mOwnersDB);
+                intent.putExtra("parcel_map", mParcelMap);
+                startActivity(intent);
+            }
             return true;
-        } else if (id == R.id.action_view_fbf_parcels) {
+        } 
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.fbf_map){
             Intent intent = new Intent(this, ParcelViewActivity.class);
             intent.putExtra("owners_db", mOwnersDB);
             intent.putExtra("parcel_map", mParcelMap);
@@ -103,7 +142,5 @@ public class FBFDetailActivity extends ActionBarActivity {
             intent.putExtra("title", getTitle().toString());
             startActivity(intent);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }

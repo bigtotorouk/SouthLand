@@ -17,5 +17,12 @@
     <string name="title_activity_fbfdetail">FBFDetailActivity</string>
     <string name="title_activity_cbfdetail">CBFDetailActivity</string>
     <string name="title_activity_parcel_view">ParcelViewActivity</string>
+    <string name="title_activity_fbflist">发包方</string>
+    <string name="action_bar_add">新建</string>
+    <string name="title_activity_fbfedit">FBFEditActivity</string>
+    <string name="dialog_title_tip">提示</string>
+    <string name="dialog_message_save_fbf">是否保存本次修改？</string>
+    <string name="dialog_btn_yes">确定</string>
+    <string name="dialog_btn_no">取消</string>
 
 </resources>

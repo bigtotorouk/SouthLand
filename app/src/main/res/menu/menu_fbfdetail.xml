@@ -3,9 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.shewei.southland.FBFDetailActivity">
 
-    <item android:id="@+id/action_view_fbf_parcels" android:title="查看宗地图"
-        android:icon="@drawable/ic_action_map" app:showAsAction="always" />
-
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_edit" android:title="编辑"
+        android:icon="@android:drawable/ic_menu_edit" app:showAsAction="always" />
 </menu>
